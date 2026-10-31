@@ -1,193 +1,111 @@
-# Awesome-Third-Party-Data-App-Marketplace
+<p align="center">
+  <img src="./assets/marketplace-banner.svg" alt="Awesome Third-Party Data and App Marketplace Ecosystem Banner" width="100%">
+</p>
 
-## Top Third-Party Data & App Marketplace Ecosystem
+# Awesome Third-Party Data & App Marketplace
 
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-blue.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ishandutta2007/Awesome-Third-Party-Data-App-Marketplace/pulls)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/ishandutta2007/Awesome-Third-Party-Data-App-Marketplace/graphs/commit-activity)
 
+A curated list of **Enterprise Third-Party Data Marketplaces**, **Cloud Data Exchanges**, **SaaS App Marketplaces**, and **Open-Source Marketplace Infrastructure**.
 
-**Curated List of SaaS Products & Open-Source GitHub Projects**  
-
-*Focused on Data Exchange, Agent Distribution & Self-Hosted Marketplace Infrastructure*  
-
-**Last updated: October 2026**
-
-
-
-This repository tracks notable **SaaS platforms** and **open-source projects** for **Third-Party Data & App Marketplaces**. These platforms enable organizations to discover, procure, and integrate external data assets—and increasingly, AI agents and applications—directly within their existing cloud or software ecosystems, with billing often flowing through committed cloud spend.
-
-
-
-**Examples** include Snowflake Marketplace, AWS Marketplace, Google Cloud Marketplace, Microsoft Commercial Marketplace, Databricks Marketplace, Datarade, Salesforce AppExchange, Bloomberg Enterprise Access Point, FactSet Marketplace, and Crux Informatics (the category leaders).
-
-
-
-**Open-source emphasis**: Third-Party Data & App Marketplace is a domain where open-source tooling is **exceptionally sparse**. The core marketplace infrastructure—listing management, secure token issuance, payments, and access control—is rarely open-sourced because it sits at the intersection of commercial data licensing and proprietary procurement workflows. The notable exception is **Unified Data Marketplace (UDAM)**, an API-first backend for monetizing data services with Stripe integration and encrypted token delivery . **FQora** is an academic prototype for quality-based data marketplace pricing, not a production platform . **World Vibe Web** offers a federated app directory model, but it is a static index of GitHub repos rather than a commerce-enabled marketplace . The critical gap: **no open-source project replicates the enterprise procurement integration** of AWS Marketplace or Snowflake Marketplace—where purchases draw down committed cloud spend and listings are inseparable from the runtime environment .
-
-
-
-Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
-
-
-
-## Table of Contents
-
-- [SaaS/Hosted Platforms](#saas-products)
-
-- [Open-Source GitHub Projects](#open-source-github-projects)
-
-- [How to Contribute](#how-to-contribute)
-
-- [Disclaimer](#disclaimer)
-
-
-
-## SaaS/Hosted Platforms
-
-
-
-- **[Snowflake Marketplace](https://www.snowflake.com/)**  
-
-  Data and app marketplace delivering listings as **live shares** directly into Snowflake accounts—no ETL or file copy; data appears as a queryable database. Sellers earn **90% revenue share**, the highest among major platforms . Market share ~16.56% in integrations marketplace category, with 1,383 customers including JPMorgan Chase, EY, and LSEG . Best for Snowflake-native teams wanting fastest integration.
-
-
-
-- **[AWS Marketplace](https://aws.amazon.com/marketplace)**  
-
-  The largest enterprise data marketplace with **3,500+ paid commercial listings** and 48.45% market share . Data delivered as files to S3, Redshift, or via API; purchases run through AWS billing, simplifying procurement against committed cloud spend . Sellers earn **70%** (30% platform cut). Categories include financial data (Refinitiv, FactSet), healthcare (IQVIA), location, and weather .
-
-
-
-- **[Google Cloud Marketplace](https://cloud.google.com/marketplace)**  
-
-  Google Cloud's marketplace with **14.56% market share** and a protocol-first approach for AI agents via the **Agent2Agent (A2A) protocol**; vendors publish an Agent Card JSON and get listed with minimal friction . Billing consolidates through Google Cloud accounts. Best for organizations already on Vertex AI/Gemini Enterprise.
-
-
-
-- **[Microsoft Commercial Marketplace](https://azuremarketplace.microsoft.com/)**  
-
-  Microsoft's commercial marketplace (Azure Marketplace + Microsoft 365 Agent Store) with a **distribution moat of 400M+ Microsoft 365 seats**; Agent Store lives directly inside Copilot Chat with 70+ curated agents at launch . Install-once-use-everywhere across Teams, Outlook, and M365 surface. Revenue share **85% to developers** on Windows Agent Store (preview) .
-
-
-
-- **[Databricks Marketplace](https://www.databricks.com/)**  
-
-  Marketplace for Lakehouse users delivering data as **Delta Sharing tables** (cross-cloud); **10.34% market share** . Leans heavily on free public datasets and AI training corpora; paid commercial listings exist but catalog is smaller than Snowflake . Sellers earn **90%** on paid datasets .
-
-
-
-- **[Datarade](https://datarade.ai/)**  
-
-  **Neutral data marketplace directory** connecting buyers with **550+ data providers** across financial, geospatial, AI training, and B2B contact data . Free for buyers to browse, sample, and request quotes; quote requests route details to vendor sales teams . **Directory only**—no quality control, delivery, or data tooling . Best for comparing vendors before committing.
-
-
-
-- **[Salesforce AppExchange](https://appexchange.salesforce.com/)**  
-
-  The oldest and most consolidated cloud app marketplace (20+ years, 5,000+ apps); **AgentExchange** extends this to AI agents with **1,000+ agents and skills** and 200+ partners, leveraging AppExchange's security review heritage . Revenue share 15% (ISVforce) or 25% (OEM) . Best for buyers already in Salesforce CRM/Service Cloud/Slack.
-
-
-
-- **[Bloomberg Enterprise Access Point](https://www.bloomberg.com/professional/)**  
-
-  Web-based platform for clients to discover and act on Bloomberg data products; focused on financial data distribution within Bloomberg's ecosystem .
-
-
-
-- **[FactSet Marketplace](https://www.factset.com/marketplace)**  
-
-  Financial data marketplace with **327+ products** including data feeds, APIs, and platforms; integrates with Snowflake, Databricks, Amazon Redshift, and FactSet's hosted environment . Strong for investment research and portfolio analytics workflows.
-
-
-
-- **[Crux Informatics](https://www.cruxinformatics.com/)**  
-
-  Data operations and delivery platform connecting buyers with data providers; focused on reducing the friction of data onboarding and pipeline management for financial firms .
-
-
-
-## Open-Source GitHub Projects
-
-
-
-### Marketplace Backend Infrastructure
-
-
-
-- **[Unified Data Marketplace (UDAM)](https://github.com/data-agent-marketplace/data-agent-marketplace)**  
-
-  The most complete open-source **API-first data marketplace backend** available (open-source, Node.js/Next.js/PostgreSQL) . Provides ready-to-use API for **listings, orders, and token management**; **Stripe integration** for payments (or instant tokens for small orders); **AES-256 token encryption** for service credentials; **concurrency-safe order processing** with PostgreSQL row locks to prevent overselling; session-based auth with OAuth provider support; and Docker-ready deployment . **For data sellers**: create listings with pricing and units, manage API keys securely, automated token issuance on purchase. **For buyers**: browse, instant purchase for small orders, Stripe checkout for larger orders, token management . **This is the closest open-source equivalent to the transactional plumbing of AWS Data Exchange**—but it is a backend only (bring your own frontend design) and does not provide the enterprise procurement or cloud-spend integration.
-
-
-
-### Academic & Research Prototypes
-
-
-
-- **[FQora](https://github.com/Songyue-Guo/FQora_web_demo)**  
-
-  Academic prototype for a **fair and quality-based data marketplace** (ACM Web Conference 2025) . Introduces quality-constrained queries with quality-based pricing functions, effective quality assessment mechanisms, and **Balanced Pareto Optimization** to maximize utilities for both buyers and sellers . **Not production-ready**—it is a demonstration system for research on marketplace fairness and pricing, not a deployable platform.
-
-
-
-### Federated App Directories
-
-
-
-- **[World Vibe Web (WVW)](https://github.com/f/wvw.dev)**  
-
-  Federated app store for open-source, "vibe-coded" projects (open-source, static site on GitHub Pages) . **No central authority**—anyone with a GitHub repo publishes an `apps.json`; a GitHub Action runs every 6 hours to aggregate, deduplicate, and enrich listings with live GitHub stats . **Guardrails**: declared stars/forks ignored (fetched live from GitHub API), featured apps curated by AI agent daily, only recognized categories accepted, owner attribution derived from repo path . **Not a commerce-enabled marketplace**—no payments, no transactions, no data licensing. It is a **discovery index** demonstrating the federated listing pattern.
-
-
-
-### Additional Strong Open-Source Options
-
-
-
-- **No open-source equivalent to enterprise cloud marketplaces exists** — The procurement integration (purchases drawing down committed cloud spend) and runtime coupling (listings inseparable from where the agent executes) of AWS, Snowflake, and Microsoft marketplaces are not replicable by open-source software . These are business-model and infrastructure integrations, not software features.
-
-- **No open-source agent marketplace with commerce exists** — AgentExchange, Gemini Enterprise, and Microsoft Agent Store provide security review, revenue share, and billing integration; no open-source project replicates this .
-
-
-
-**Frameworks for building custom systems**: For a **transactional data marketplace backend**, UDAM provides the most complete open-source foundation with Stripe payments and encrypted token delivery . For a **federated app directory without commerce**, WVW demonstrates the listing aggregation pattern . For **enterprise data procurement with cloud-spend integration**, no open-source option exists—organizations must use AWS, Snowflake, or Databricks marketplaces directly.
-
-
-
-## How to Contribute
-
-
-
-1. Fork the repo.
-
-2. Add/edit entries in `README.md` (follow existing format).
-
-3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-
-4. Submit PR with a short explanation.
-
-
-
-Star the repo if you find it useful!
-
-
-
-## Disclaimer
-
-
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-
-- Data and app marketplaces handling third-party assets and transactions must comply with applicable data licensing terms, privacy regulations (GDPR, CCPA), and procurement policies; **data licensing terms vary significantly by provider and platform**—review resale, sublicensing, and warranty clauses before purchasing .
-
-- **Open-source third-party marketplace infrastructure is severely limited**—UDAM provides a transactional backend for data services , and WVW demonstrates federated app discovery , but **no open-source project replicates the enterprise procurement and cloud-spend integration** of AWS, Snowflake, or Microsoft marketplaces. These platforms derive their value from billing relationships and runtime coupling that software alone cannot provide.
-
-- Verify license terms for commercial use; UDAM is open-source (check repository) , and WVW is open-source (check repository) .
-
-
+> Discover platforms, protocols, and self-hosted backends powering the global data economy, cloud procurement drawdown, zero-ETL data sharing, and AI agent distribution.
 
 ---
 
+## Table of Contents
 
+- [Sector Overview & Market Dynamics](#sector-overview--market-dynamics)
+- [SaaS & Hosted Marketplaces](#saashosted-platforms)
+- [Open-Source Marketplace Projects](#open-source-github-projects)
+- [Architectural Key Differences](#architectural-key-differences)
+- [How to Contribute](#how-to-contribute)
+- [Disclaimer & Licensing](#disclaimer)
 
-**Made for data platform engineers, procurement architects, and organizations building or evaluating marketplace infrastructure.**  
+---
 
-Let's make third-party data and app marketplaces more open, but with clear eyes about the procurement and billing integration that commercial platforms own.
+## Sector Overview & Market Dynamics
+
+The global third-party data and commercial cloud marketplace sector is estimated at **$28.5 Billion in 2026** and projected to exceed **$85 Billion by 2030**, driven exponentially by enterprise AI training ingestion, autonomous agent distribution, and committed cloud budget drawdowns. The sector is **highly concentrated and winner-take-most**, where hyperscalers (AWS, Microsoft Azure, Google Cloud) and modern cloud data warehouses (Snowflake, Databricks) leverage distribution moats, runtime execution lock-in, and pre-allocated enterprise cloud budgets that standalone catalog vendors cannot easily disrupt.
+
+---
+
+## SaaS/Hosted Platforms
+
+The table below profiles the leading hosted third-party data and application marketplaces, sorted in descending order by parent company scale (valuation / market capitalization).
+
+| Marketplace | Parent Company Scale (Market Cap / Valuation) | Starting Pricing (Specific Tier) | Free Tier Limits / Free Trial Policy | Key Focus & Capabilities |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Microsoft Commercial Marketplace](https://azuremarketplace.microsoft.com/)** | **$3,150 Billion** (Market Cap) | **$0 listing fee**; charges **3% flat transaction fee** for transactable listings; SaaS app listings start at **$0.01/hour** or **$5/user/month** minimum | **$200 Azure cloud credit** for 30 days plus 55+ always-free services; free trial SaaS listings supported up to **30 or 90 days** per publisher | Azure Marketplace & M365 Agent Store reaching 400M+ enterprise seats across Teams, Outlook, and Copilot Studio. |
+| **[Google Cloud Marketplace](https://cloud.google.com/marketplace)** | **$2,180 Billion** (Market Cap) | **$0 listing fee**; **3% platform transaction fee**; VM/Container listings start at **$0.01/core-hour**; dataset subscriptions from **$20/month** | **$300 free credits** over a 90-day free trial period for new Google Cloud users, plus 20+ always-free products | Protocol-first AI distribution via Agent2Agent (A2A) protocol, Gemini Enterprise ecosystem, and Vertex AI integrations. |
+| **[AWS Marketplace](https://aws.amazon.com/marketplace)** | **$2,020 Billion** (Market Cap) | **$0 listing fee**; sellers pay tiered **1.5% to 3.0% transaction fee** (or 30% for AWS Data Exchange); listings start at **$0.01/unit** or **$25/month** base | **AWS Free Tier (12-month tier, always-free services)**; marketplace data listings offer **30-day free trials** with custom sample record limits | The largest cloud catalog with 3,500+ commercial data feeds, file deliveries to S3/Redshift, and cloud budget burn-down. |
+| **[Salesforce AppExchange](https://appexchange.salesforce.com/)** | **$280 Billion** (Market Cap) | **$2,700 first-year Partner Program onboarding fee** ($150 annual renewal); revenue share **15%** (ISVforce) or **25%** (OEM); app listings start at **$1/user/month** | **30-day free trial** of Salesforce Developer Edition; apps often offer **14-day or 30-day fully functional trial** orgs | Enterprise CRM and AgentExchange platform featuring 5,000+ business applications and 1,000+ autonomous AI agent skills. |
+| **[Bloomberg Enterprise Access Point](https://www.bloomberg.com/professional/)** | **$125 Billion** (Valuation) | Minimum enterprise contract starts at **$15,000/year** (or terminal licensing starting from **$2,500/month** per seat) | **No perpetual free tier**; offers structured **14-day proof-of-concept (PoC) free trial** with restricted test datasets for qualified institutional firms | Institutional finance data portal delivering normalized equity, fixed income, reference data, and real-time feeds via SFTP/REST/Snowflake. |
+| **[Snowflake Marketplace](https://www.snowflake.com/)** | **$55 Billion** (Market Cap) | **$0 listing fee**; data providers receive **90% revenue share** (10% platform fee); paid datasets start at **$100/month** flat subscription | **30-day free trial with $400 worth of free compute credits**; permanent **free listings/sample shares** accessible with 0 platform fees | Zero-ETL direct SQL live shares directly inside customer accounts without copying files or building ingest pipelines. |
+| **[Databricks Marketplace](https://www.databricks.com/)** | **$43 Billion** (Valuation) | **$0 marketplace fee** for Delta Sharing consumers; seller payout **90%** on paid datasets; paid data listings start from **$150/month** | **14-day full platform free trial** on AWS/Azure/GCP; permanent access to **1,200+ free open-access public datasets** via Delta Sharing | Cross-cloud and multi-engine lakehouse data exchange, featuring Delta Sharing tables, ML models, and LLM notebooks. |
+| **[FactSet Marketplace](https://www.factset.com/marketplace)** | **$17 Billion** (Market Cap) | Single API package feeds start at **$1,000/month** minimum baseline contract | **No perpetual free tier**; provides a **30-day corporate sandbox trial** with historical mock financial datasets upon sales approval | Over 320 specialized financial, earnings, and ESG data products integrating with Snowflake, Redshift, and Databricks. |
+| **[Crux Informatics](https://www.cruxinformatics.com/)** | **$350 Million** (Valuation) | Managed data pipelines and distribution starting from **$2,500/month** | **No perpetual free tier**; provides a **30-day sandbox pilot** with up to 3 supplier data pipelines for enterprise evaluation | Data pipeline delivery and data operations platform standardizing ingestion from external suppliers into enterprise warehouses. |
+| **[Datarade](https://datarade.ai/)** | **$25 Million** (Valuation) | **$0 for data buyers**; vendor lead-generation listings start at **€600/month** (Annual Partner Tier) | **Perpetual 100% free search & directory browsing for buyers**; free trial data samples available on demand per vendor | Neutral data marketplace search engine and RFQ directory connecting enterprise buyers with 550+ global data vendors. |
+
+---
+
+## Open-Source GitHub Projects
+
+Open-source repositories providing core marketplace components, decentralized data sharing protocols, self-hosted web directories, and billing engines. Ranked by GitHub stars in descending order:
+
+| Project & Repository | Stars Badge | Architecture / Tech Stack | Primary Capabilities & Role |
+| :--- | :--- | :--- | :--- |
+| **[Delta Sharing](https://github.com/delta-io/delta-sharing)** | [![GitHub stars](https://img.shields.io/github/stars/delta-io/delta-sharing?style=social&color=white)](https://github.com/delta-io/delta-sharing/stargazers) | Python, Rust, Scala, Spark | **Open Data Exchange Protocol**: The open protocol developed by Databricks for secure real-time data sharing across clouds and compute systems without data replication or proprietary warehouse lock-in. |
+| **[data.all](https://github.com/data-dot-all/dataall)** | [![GitHub stars](https://img.shields.io/github/stars/data-dot-all/dataall?style=social&color=white)](https://github.com/data-dot-all/dataall/stargazers) | Python, React, GraphQL, AWS CDK | **Enterprise Internal Data Marketplace**: An open-source framework developed by AWS to build custom enterprise data marketplaces, automating data governance, cross-account sharing, and catalog discovery. |
+| **[Ocean Protocol Market](https://github.com/oceanprotocol/market)** | [![GitHub stars](https://img.shields.io/github/stars/oceanprotocol/market?style=social&color=white)](https://github.com/oceanprotocol/market/stargazers) | React, TypeScript, Next.js, Web3 | **Decentralized Data Marketplace Frontend**: Production-ready open-source frontend client for monetizing, discovering, and transacting data assets, algorithms, and compute-to-data jobs using blockchain tokens. |
+| **[Google Cloud Datashare Toolkit](https://github.com/GoogleCloudPlatform/datashare-toolkit)** | [![GitHub stars](https://img.shields.io/github/stars/GoogleCloudPlatform/datashare-toolkit?style=social&color=white)](https://github.com/GoogleCloudPlatform/datashare-toolkit/stargazers) | Python, Terraform, BigQuery | **Self-Hosted Commercial Data Sharing Engine**: Reference architecture and tools from Google Cloud for publishers to build commercial data delivery pipelines and monetize datasets via BigQuery and Cloud Storage. |
+| **[World Vibe Web (WVW)](https://github.com/f/wvw.dev)** | [![GitHub stars](https://img.shields.io/github/stars/f/wvw.dev?style=social&color=white)](https://github.com/f/wvw.dev/stargazers) | Static Site, JavaScript, GitHub Actions | **Federated Open-Source App Directory**: Decentralized app directory demonstrating community listing aggregation where developers publish `apps.json` metadata in their own GitHub repos without a central listing authority. |
+| **[Unified Data Marketplace (UDAM)](https://github.com/data-agent-marketplace/data-agent-marketplace)** | [![GitHub stars](https://img.shields.io/github/stars/data-agent-marketplace/data-agent-marketplace?style=social&color=white)](https://github.com/data-agent-marketplace/data-agent-marketplace/stargazers) | Node.js, Next.js, PostgreSQL, Stripe | **Transactional Data Marketplace Backend**: Complete API-first backend for monetizing data services, featuring Stripe billing integration, AES-256 token encryption, and concurrency-safe PostgreSQL row locking. |
+| **[FQora](https://github.com/Songyue-Guo/FQora_web_demo)** | [![GitHub stars](https://img.shields.io/github/stars/Songyue-Guo/FQora_web_demo?style=social&color=white)](https://github.com/Songyue-Guo/FQora_web_demo/stargazers) | Python, Flask, Academic Demo | **Algorithmic Quality-Pricing Prototype**: Research implementation of fair and quality-based data pricing functions (ACM Web Conference), showcasing Balanced Pareto Optimization between buyers and sellers. |
+
+---
+
+## Architectural Key Differences
+
+When evaluating third-party data and app marketplace solutions, note three fundamental deployment patterns:
+
+1. **Procurement & Cloud Spend Integration (Hyperscalers)**:
+   - AWS Marketplace, Microsoft Azure Marketplace, and Google Cloud Marketplace allow buyers to retire existing enterprise committed cloud expenditure (EDP, MACC).
+   - This procurement friction-reducer is a contractual and billing capability that standalone open-source software cannot reproduce out of the box.
+
+2. **Zero-ETL Live Sharing (Modern Data Warehouses)**:
+   - Snowflake Marketplace and Databricks Marketplace (via Delta Sharing) expose live database tables directly inside the consumer's analytics engine.
+   - Eliminates data movement, batch ETL pipelines, and storage duplications.
+
+3. **Self-Hosted & API-Driven Marketplaces (Open-Source)**:
+   - Use **[UDAM](https://github.com/data-agent-marketplace/data-agent-marketplace)** for self-hosted REST API key sales and Stripe checkout flows.
+   - Use **[data.all](https://github.com/data-dot-all/dataall)** for enterprise-internal governed dataset distribution.
+   - Use **[Delta Sharing](https://github.com/delta-io/delta-sharing)** for cross-platform zero-copy data exchange over open REST protocols.
+
+---
+
+## How to Contribute
+
+Contributions are welcome to expand and refine this ecosystem directory!
+
+1. **Fork the repository** on GitHub.
+2. **Add or update an entry** in `README.md`:
+   - For SaaS products: provide precise parent scale (valuation / market cap), starting price tier, free tier / trial rules, and core features.
+   - For Open-Source projects: provide the GitHub repo link, verify star counts, and include its architecture and role.
+3. **Submit a pull request** with a concise description of the addition.
+
+---
+
+## Disclaimer
+
+- This list is community-curated for informational and architectural evaluation purposes.
+- Data and application listings are subject to external licensing agreements, copyright, privacy frameworks (GDPR, CCPA/CPRA, HIPAA), and proprietary terms of service. Review third-party warranty and sublicensing provisions before subscribing.
+- All product names, logos, and brands belong to their respective copyright holders.
+
+---
+
+<p align="center">
+  <sub>Maintained for data platform architects, procurement leaders, and software engineers building data marketplace infrastructure.</sub>
+</p>

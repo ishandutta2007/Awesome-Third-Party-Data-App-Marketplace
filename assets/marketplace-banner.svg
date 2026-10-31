@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%" style="background:#090d16; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="50%" stop-color="#0e172a" />
+      <stop offset="100%" stop-color="#060911" />
+    </linearGradient>
+
+    <!-- Vibrant Accents -->
+    <linearGradient id="accent-cyan-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="glow-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#a855f7" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <!-- Card Background Gradient -->
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.85" />
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="cyber-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.7" stroke-opacity="0.3" />
+    </pattern>
+
+    <!-- Subtle Glow Filters -->
+    <filter id="glow-subtle" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    /* CSS Keyframe Animations */
+    @keyframes pulseOrb {
+      0%, 100% { transform: scale(1) translate(0px, 0px); opacity: 0.35; }
+      50% { transform: scale(1.15) translate(25px, -15px); opacity: 0.6; }
+    }
+    @keyframes pulseOrb2 {
+      0%, 100% { transform: scale(1.1) translate(0px, 0px); opacity: 0.25; }
+      50% { transform: scale(0.9) translate(-30px, 20px); opacity: 0.5; }
+    }
+    @keyframes streamData {
+      0% { stroke-dashoffset: 400; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes floatCard1 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-7px); }
+    }
+    @keyframes floatCard2 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-9px); }
+    }
+    @keyframes floatCard3 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+    @keyframes pingDot {
+      0%, 100% { r: 3.5px; opacity: 0.7; }
+      50% { r: 6.5px; opacity: 1; filter: drop-shadow(0 0 6px #38bdf8); }
+    }
+
+    .orb-anim-1 { animation: pulseOrb 10s ease-in-out infinite; transform-origin: center; }
+    .orb-anim-2 { animation: pulseOrb2 12s ease-in-out infinite; transform-origin: center; }
+    .stream-line { stroke-dasharray: 12, 12; animation: streamData 14s linear infinite; }
+    .stream-line-rev { stroke-dasharray: 10, 14; animation: streamData 18s linear infinite reverse; }
+    .card-1 { animation: floatCard1 5s ease-in-out infinite; }
+    .card-2 { animation: floatCard2 6.5s ease-in-out infinite 0.8s; }
+    .card-3 { animation: floatCard3 5.8s ease-in-out infinite 1.6s; }
+    .beacon { animation: pingDot 3s ease-in-out infinite; }
+  </style>
+
+  <!-- Deep Background Layer -->
+  <rect width="1200" height="420" fill="url(#bg-grad)" />
+  <rect width="1200" height="420" fill="url(#cyber-grid)" />
+
+  <!-- Dynamic Glowing Orbs in Background -->
+  <g filter="url(#glow-subtle)">
+    <circle class="orb-anim-1" cx="220" cy="110" r="140" fill="#0284c7" />
+    <circle class="orb-anim-2" cx="1020" cy="290" r="160" fill="#7c3aed" />
+    <circle class="orb-anim-1" cx="620" cy="380" r="110" fill="#ec4899" />
+  </g>
+
+  <!-- Dynamic Flowing Connecting Lines across canvas -->
+  <g opacity="0.45">
+    <path class="stream-line" d="M -50 180 C 250 80, 450 280, 750 140 C 950 40, 1080 200, 1250 150" fill="none" stroke="#38bdf8" stroke-width="2" />
+    <path class="stream-line-rev" d="M -50 260 C 200 320, 500 160, 800 290 C 1000 380, 1150 220, 1250 280" fill="none" stroke="#c084fc" stroke-width="1.8" />
+    <path class="stream-line" d="M 100 -20 C 300 180, 600 80, 850 240 C 1050 340, 1180 180, 1250 100" fill="none" stroke="#818cf8" stroke-width="1.2" stroke-opacity="0.6" />
+  </g>
+
+  <!-- FOREGROUND HERO HEADER (Crystal clear and unobstructed) -->
+  <g id="header-text">
+    <!-- Category Pill Badge -->
+    <g transform="translate(60, 42)">
+      <rect width="330" height="30" rx="15" fill="#1e293b" stroke="#3b82f6" stroke-width="1.2" />
+      <circle cx="16" cy="15" r="4.5" fill="#10b981" class="beacon" />
+      <text x="30" y="19.5" fill="#93c5fd" font-size="12" font-weight="600" letter-spacing="0.08em">CURATED ECOSYSTEM DIRECTORY</text>
+    </g>
+
+    <!-- Main Title with Gradient Glow -->
+    <text x="60" y="125" fill="url(#accent-cyan-purple)" font-size="44" font-weight="800" letter-spacing="-0.02em">
+      Awesome Third-Party Data &amp; App Marketplace
+    </text>
+
+    <!-- Subtitle text -->
+    <text x="60" y="165" fill="#94a3b8" font-size="19" font-weight="400">
+      Enterprise Cloud Data Exchanges • AI Agent Hubs • Self-Hosted Marketplace Engines
+    </text>
+  </g>
+
+  <!-- INTERACTIVE / DYNAMIC ECOSYSTEM METRIC PILLS & CARDS (Lower Foreground) -->
+  <g transform="translate(60, 215)">
+    <!-- Card 1: Cloud Marketplaces & Exchanges -->
+    <g class="card-1" transform="translate(0, 0)">
+      <rect width="330" height="135" rx="14" fill="url(#card-grad)" stroke="#334155" stroke-width="1.2" />
+      <rect width="5" height="135" rx="2" fill="#38bdf8" />
+      <text x="24" y="36" fill="#38bdf8" font-size="13" font-weight="700" letter-spacing="0.08em">ENTERPRISE CLOUD EXCHANGES</text>
+      <text x="24" y="66" fill="#f8fafc" font-size="16" font-weight="600">Committed Cloud Spend</text>
+      <text x="24" y="92" fill="#94a3b8" font-size="13">Zero-ETL Live Shares &amp; Delta Sharing</text>
+      <text x="24" y="114" fill="#64748b" font-size="12">Snowflake • AWS • Google Cloud • Azure</text>
+    </g>
+
+    <!-- Card 2: AI Agent & Extension Hubs -->
+    <g class="card-2" transform="translate(365, 0)">
+      <rect width="330" height="135" rx="14" fill="url(#card-grad)" stroke="#334155" stroke-width="1.2" />
+      <rect width="5" height="135" rx="2" fill="#a855f7" />
+      <text x="24" y="36" fill="#c084fc" font-size="13" font-weight="700" letter-spacing="0.08em">AI AGENTS &amp; APP PLATFORMS</text>
+      <text x="24" y="66" fill="#f8fafc" font-size="16" font-weight="600">Autonomous Ecosystems</text>
+      <text x="24" y="92" fill="#94a3b8" font-size="13">A2A Protocol, AgentExchange &amp; M365</text>
+      <text x="24" y="114" fill="#64748b" font-size="12">Salesforce • Copilot Studio • Datarade</text>
+    </g>
+
+    <!-- Card 3: Open-Source Infrastructure -->
+    <g class="card-3" transform="translate(730, 0)">
+      <rect width="345" height="135" rx="14" fill="url(#card-grad)" stroke="#334155" stroke-width="1.2" />
+      <rect width="5" height="135" rx="2" fill="#10b981" />
+      <text x="24" y="36" fill="#34d399" font-size="13" font-weight="700" letter-spacing="0.08em">OPEN-SOURCE &amp; PROTOCOLS</text>
+      <text x="24" y="66" fill="#f8fafc" font-size="16" font-weight="600">Self-Hosted Marketplace Backends</text>
+      <text x="24" y="92" fill="#94a3b8" font-size="13">Decentralized Sharing &amp; Stripe Issuance</text>
+      <text x="24" y="114" fill="#64748b" font-size="12">Delta Sharing • data.all • Ocean • UDAM</text>
+    </g>
+  </g>
+
+  <!-- Bottom Accent Status Bar -->
+  <rect x="0" y="415" width="1200" height="5" fill="url(#glow-grad)" />
+</svg>
